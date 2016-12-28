@@ -190,7 +190,7 @@ public class Characters {
         charMap.put('u', characters[u]);
         charMap.put('V', characters[V]);
         charMap.put('v', characters[v]);
-        charMap.put('W', characters[w]);
+        charMap.put('W', characters[W]);
         charMap.put('w', characters[w]);
         charMap.put('X', characters[X]);
         charMap.put('x', characters[x]);
