@@ -1,5 +1,5 @@
 package arrays;
-// Test
+
 /**
  * Holds an integer array with 7 elements.
  * Contains a collection of methods for use with the array.
