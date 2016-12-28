@@ -1,4 +1,4 @@
-package Characters;
+package characters;
 
 import arrays.Array7x7;
 
@@ -15,7 +15,7 @@ import java.util.HashMap;
  * <p>
  * This class is a Singleton, only one instance is ever needed so only exactly one can be created.
  * The constructor is private, it's not possible to create instances with the "new" keyword.
- * Use Characters.getInstance() instead.
+ * Use characters.getInstance() instead.
  * <p>
  * Created by Martin on 2016-12-19.
  */
@@ -295,7 +295,7 @@ public class Characters {
         private static final Characters INSTANCE = new Characters();
     }
 
-    // Returns a reference to a Characters object, only one instance can be created.
+    // Returns a reference to a characters object, only one instance can be created.
     public static Characters getInstance() {
         return CharactersHolder.INSTANCE;
     }
