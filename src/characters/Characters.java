@@ -9,13 +9,13 @@ import java.io.IOException;
 import java.util.HashMap;
 
 /**
- * Loads characters from a an image font and stores them in an array of Array7x7s.
+ * Loads characters from an image font and stores them in an array of Array7x7s.
  * getCharacter(Character) returns an Array7x7 containing the given character.
  * If the given character does not exist it returns the symbol for an unknown character.
  * <p>
  * This class is a Singleton, only one instance is ever needed so only exactly one can be created.
  * The constructor is private, it's not possible to create instances with the "new" keyword.
- * Use characters.getInstance() instead.
+ * Use Characters.getInstance() instead.
  * <p>
  * Created by Martin on 2016-12-19.
  */
@@ -235,7 +235,7 @@ public class Characters {
     }
 
     private void loadCharactersFromImage() {
-        int maxNumOfChars = 95;
+        int maxNumOfChars = 96;
         int arrayWidth = 6;
         int arrayHeight = 6;
 
@@ -251,30 +251,30 @@ public class Characters {
         }
 
 
-        for (int currentCharacter = 0; currentCharacter <= maxNumOfChars; currentCharacter++) {
+        for (int currentCharacter = 0; currentCharacter < maxNumOfChars; currentCharacter++) {
             characters[currentCharacter] = new Array7x7();
 
             currentCol = currentCharacter / 8;
             currentRow = currentCharacter % 8;
 
-            int start_x = currentRow * 7;
-            int start_y = currentCol * 7;
+            int startX = currentRow * 7;
+            int startY = currentCol * 7;
 
             int arrayIndex = 0;
-            int arrayPos_x;
-            int arrayPos_y;
+            int arrayPosX;
+            int arrayPosY;
 
             //System.out.println("-------" + currentCol + "," + currentRow + "-------");
-            for (int x = start_x; x <= start_x + arrayWidth; x++) {
-                for (int y = start_y; y <= start_y + arrayHeight; y++) {
+            for (int x = startX; x <= startX + arrayWidth; x++) {
+                for (int y = startY; y <= startY + arrayHeight; y++) {
 
-                    arrayPos_x = arrayIndex % 7;
-                    arrayPos_y = arrayIndex / 7;
+                    arrayPosX = arrayIndex % 7;
+                    arrayPosY = arrayIndex / 7;
 
-                    characters[currentCharacter].setElement(arrayPos_x, arrayPos_y, image.getRGB(x, y));
+                    characters[currentCharacter].setElement(arrayPosX, arrayPosY, image.getRGB(x, y));
 
                     arrayIndex++;
-                    //System.out.println("[" + arrayPos_x + "," + arrayPos_y + "]" + "[" + currentCharacter + "]" + "[" + x + "," + y + "]");
+                    //System.out.println("[" + arrayPosX + "," + arrayPosY + "]" + "[" + currentCharacter + "]" + "[" + x + "," + y + "]");
 
                 }
             }
